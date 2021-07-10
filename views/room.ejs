@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video-Chat</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/45874c948e.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const Room_ID='<%= roomId %>'
+    </script>
+</head>
+<body>
+    <!-- <div class="header">
+        <div class="logo">
+            <i class="fas fa-users"></i>
+        </div>
+        <h4>MS Teams Clone</h4>
+    </div> -->
+    <!-- <div class="main"> -->
+        <!-- <div class="left">
+            <div class="options">
+                <div class="opt">
+                    <div id="turn_off_video" class="opt_button">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div id="mic" class="opt_button">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div id="invite" class="opt_button">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="videos"> -->
+                <div id="video-grid"></div>
+            <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="right">
+            <div class="chat_window">
+                <div class="messages"></div>
+            </div>
+            <div class="msg_container">
+                <input id="chat" type="text" autocomplete="off" placeholder="Type a message">
+                <div id="send_msg" class="opt_button send_btn">
+                    <i class="far fa-paper-plane"></i>
+                </div>
+            </div>
+        </div> -->
+    <!-- </div>   -->
+</body>
+<script src="script.js"></script>
+</html>
