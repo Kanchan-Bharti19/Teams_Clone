@@ -41,9 +41,9 @@ io.on('connection', socket => {
     // Broadcast everyone else in the room when someone connects .
     socket.to(roomId).broadcast.emit('user-connected', userId)
 
-    socket.on('message', message => {
-      io.to(roomId).emit('createMessage', message)
-      // io.to(roomId).emit('createMessage', message, userName);
+    socket.on('message', (message, userName) => {
+      // io.to(roomId).emit('createMessage', message)
+      io.to(roomId).emit('createMessage', message, userName);
     });
 
     socket.on('disconnect', () => {

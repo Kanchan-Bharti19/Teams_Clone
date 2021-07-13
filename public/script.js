@@ -55,9 +55,8 @@ navigator.mediaDevices.getUserMedia({
     }
   })
   
-  socket.on('createMessage', message => {
-    console.log('Hii')
-    $('ul').append(`<li class="message"><b>user</b><br/>${message}</li>`);
+  socket.on('createMessage', (message, userName) => {
+    $('ul').append(`<li class="message"><b><i class="far fa-user-circle"></i><span> ${userName === user ? "me" : userName}</span></b><br/>${message}</li>`);
   })
 })
 

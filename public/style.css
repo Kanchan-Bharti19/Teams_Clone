@@ -47,7 +47,7 @@ body {
 
 /* Defining positioning for the left class which contains all aur content except the chat part. */
 .left {
-    flex: 0.8;
+    flex: 0.75;
     display: flex;
     flex-direction: column;
 }
@@ -236,7 +236,7 @@ video {
 
 /* Defining positioning for the right class which contains the chat part. */
 .right {
-    flex: 0.2;
+    flex: 0.25;
     display: flex;
     flex-direction: column;
     background-color: #243854;
@@ -282,19 +282,10 @@ video {
 .message_container input {
     flex-grow: 0.8;
     height: 30px;
-    width: 100px;
+    width: auto;
     font-size: 1rem;
     border-radius: 10px;
     border: none;
-}
-
-/* Defining exclusive property for send button . */
-.send_btn {
-    padding: 0 0.5rem;
-}
-/* Defining exclusive property for send button text which can be seen on hovering. */
-.send_btn .text {
-    margin-bottom: 80px;
 }
 
 /* Defining property of messages which can be seen when we send a message. */
@@ -302,25 +293,17 @@ video {
     display: flex;
     flex-direction: column;
     margin: 1.5rem;
-    color: white;
+    color: var(--white);
 }
 
-/* .message > b {
-    color: oldlace;
-    display: flex;
+.message > b {
+    color: #f5deb3;
     align-items: center;
     text-transform: capitalize;
-} */
+    font-size: large;
+}
 
-/* .share-btn-container {
-    background: var(--white);;
-    display: flex;
-    flex-direction: row;
-    padding: 0px 10px;
-    position: fixed;
-  } */
-
-/* .message > b > i {
+.message > b > i {
     margin-right: 0.7rem;
     font-size: 1rem;
 }
@@ -329,7 +312,7 @@ video {
     margin: 1rem 0;
     padding: 1rem;
     border-radius: 5px;
-} */
+}
 
 /* #showChat {
     display: none;
@@ -342,39 +325,3 @@ video {
     left: 28px;
     color: #fff;
 } */
-
- /* Media Queries */
-/* @media (max-width: 700px) {
-    .right {
-      display: none;
-    }
-    .left {
-      width: 100%;
-      flex: 1;
-    }
-  
-    video {
-      height: auto;
-      width: 100%;
-    }
-  
-    #showChat {
-      display: flex;
-    }
-
-    .share-btn-container {
-      transform: unset;
-      top: unset;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      flex-direction: row;
-      box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3);
-      padding: 16px 0;
-      justify-content: center;
-    }
-  
-    .share-btn-container a {
-      margin: 0 32px;
-    }
-  } */
