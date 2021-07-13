@@ -1,130 +1,330 @@
-* {
+body {
     margin: 0;
-}  
+    padding: 0;
+} 
+
+/* Here we are defining colours which will be often used. */
+:root{
+    --red_shade1: rgb(255, 0, 0);
+    --red_shade2: rgb(247, 39, 39);
+    --white: rgb(255, 255, 255);
+}
+
+/* Defining styles for header class. */
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5vh;
+    height: 7vh;
     position: relative;
     width: 100%;
-    background-color: #94618e;
-    /* background-color: #4abdac; */
+    background-color: #314464;
 }
 
-.header > h4 {
-    color: white;
+/* Defining styles for h3 heading in header class. */
+.header > h3 {
+    color: var(--white);
 }
+
+/* Defining styles for logo of our app which is inside header class. */
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 25px;
     color: rgb(240, 238, 137);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     width: 25px;
     margin: 0 0.5rem;
 }
+
+/* Defining position for the main class which contains all aur content. */
 .main {
     overflow: hidden;
-    height: 95vh;
+    height: 93vh;
     display: flex;
 }
+
+/* Defining positioning for the left class which contains all aur content except the chat part. */
 .left {
-    flex: 1;
+    flex: 0.8;
     display: flex;
     flex-direction: column;
 }
-.options {
+
+/* Defining styles and position for the options_block class which contains different control buttons. */
+.options_block {
     padding: 0.25rem;
     display: flex;
-    background-color: #6c648b;
-    /* background-color: #e9c904; */
-    /* background-color: #99ced4; */
+    background-color: #283853;
 }
-.opt{
+
+/* Defining position for the options class which will reflect to the control buttons. */
+.options{
     display: flex;
     margin-left: auto;
 }
-.opt_button {
+
+/* Defining styles for option buttons . */
+.option_button {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 25px;
-    color: whitesmoke;
-    font-size: 1.2rem;
+    color: var(--white);
+    font-size: 1rem;
     width: 25px;
-    margin: 0 0.5rem;
+    padding: 0 1rem 0 0;
+    cursor: pointer;
 }
+
+/* Defining exclusive styles for call drop button . */
+.call_drop > a > i {
+    color: var(--red_shade1);
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+/* Defining styles for the text which is initially hidden and can be seen while hovering option buttons . */
+.text {
+    position: absolute;
+    width: 120 px;
+    margin-top: 45px;
+    margin-left: 0;
+    transition: 0s;
+    white-space: nowrap;
+    font-size: 12px;
+    color: rgb(206, 206, 206);
+    visibility: hidden;
+}
+
+/* Defining colour of the text which can be seen while hovering call drop button . */
+.call_drop .text{
+    color: var(--red_shade1);
+}
+
+/* Defining style for the text which can be seen on hovering option buttons . */
+.option_button:hover .text{
+    visibility: visible;
+}
+
+/* Defining styles for the option buttons which can be seen on hovering option buttons . */
+.fas:hover {
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+
+/* Defining initial positon of the popup window. */
+#popup {
+    height: 0;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+/* Defining positon of the popup window when invite button is clicked. */
+#popup:target {
+    border-radius: 5px;
+    height: 22%;
+    width: 14%;
+    top: 15%;
+    left: 60%;
+    background-color: var(--white);
+}
+
+/* Defining font-size of the icons of popup window. */
+#popup .far{
+    font-size: 1.2rem;
+}
+/* Defining effectes to be observed for invite button.  */
+.option_button a:link {
+    color: var(--white);
+    background-color: transparent;
+    text-decoration: none;
+}
+.option_button a:visited {
+    color: var(--white);
+    background-color: transparent;
+    text-decoration: none;
+}
+.option_button a:active {
+    color: var(--white);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* Defining effectes to be observed for close button inside the popup. */
+#popup a:link{
+    color: var(--red_shade1);
+    background-color: transparent;
+    text-decoration: none;
+}
+#popup a:visited {
+    color: var(--red_shade1);
+    background-color: transparent;
+    text-decoration: none;
+}
+#popup a:active {
+    color: var(--red_shade1);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* Defining size of the social media icons. */
+.share-btn-container a i {
+    font-size: 32px;
+}
+
+/* Defining colours of the social media icons. */
+.share-btn-container .fa-facebook {
+    color: #3b5998;
+} 
+.share-btn-container .fa-linkedin {
+    color: #0077b5;
+}
+.share-btn-container .fa-whatsapp {
+    color: #25d366;
+}
+
+/* Defining padding of the social media icons container. */
+.share-btn-container{
+    padding: 0 1.2rem;
+}
+
+/* Defining styles of the social media icons when hover. */
+.share-btn-container .fab:hover{
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+
+/* Defining colour of the unmute icon . */
+.unmute{
+    color: var(--red_shade1);
+}
+/* Defining colour of the stop video icon . */
+.stop{
+    color: var(--red_shade1);
+}
+
+/* Defining styles for video container class . */
 .videos{
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: #fadecb;
+    background-color: #1f293a;
 }
 
-video {
-    height: 200px;
-    margin: 0.5rem;
-    width: 250px;
-    object-fit: cover;
-    /* transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg); */
-}
-
+/* Defining position for video . */
 #video-grid {
     display: flex;
     justify-content: center;
     /* flex-wrap: wrap; */
 }
-/* .right {
+
+/* Defining position and style for video . */
+video {
+    height: 200px;
+    margin: 0.5rem;
+    width: 250px;
+    object-fit: cover;
+}
+
+/* Defining positioning for the right class which contains the chat part. */
+.right {
+    flex: 0.2;
     display: flex;
     flex-direction: column;
-    flex: 0.1;
-    background-color: gray;
-} */
-/* .chat_window {
+    background-color: #243854;
+}
+
+/* Defining style of the heading of the chat section. */
+.chat_header {
+    padding: 0.25rem 0rem;
+    height: 26px;
+    font-size: 1.2rem;
+    color: var(--white);
+    background-color: #283853;
+    display: flex;
+    text-align: center;
+}
+
+/* Defining style of the title of the heading of chat section. */
+.title {
+    padding: 0 0.25rem;
+}
+
+/* Defining properties of the chat section. */
+.chat_window {
+    display: flex;
     flex-grow: 1;
     overflow-y: scroll;
-} */
+}
 
-/* .chat_window::-webkit-scrollbar {
+/* Removing scroll-bar from the chat section. */
+.chat_window::-webkit-scrollbar {
     display: none;
-} */
-/* .msg_container {
+}
+
+/* Defining properties of the message container which is inside chat section. */
+.message_container {
     padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-} */
-/* .msg_container > input {
+}
+
+/* Defining properties of input area of message container. */
+.message_container input {
+    flex-grow: 0.8;
     height: 30px;
-    flex: 1;
+    width: 100px;
     font-size: 1rem;
     border-radius: 10px;
-    padding-left: 20px;
     border: none;
-} */
-/* .messages {
+}
+
+/* Defining exclusive property for send button . */
+.send_btn {
+    padding: 0 0.5rem;
+}
+/* Defining exclusive property for send button text which can be seen on hovering. */
+.send_btn .text {
+    margin-bottom: 80px;
+}
+
+/* Defining property of messages which can be seen when we send a message. */
+.messages {
     display: flex;
     flex-direction: column;
     margin: 1.5rem;
-} */
+    color: white;
+}
 
 /* .message > b {
     color: oldlace;
     display: flex;
     align-items: center;
     text-transform: capitalize;
-}
-.message > b > i {
+} */
+
+/* .share-btn-container {
+    background: var(--white);;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 10px;
+    position: fixed;
+  } */
+
+/* .message > b > i {
     margin-right: 0.7rem;
     font-size: 1rem;
-} */
-/* .message > span {
+}
+.message > span {
     background-color: oldlace;
     margin: 1rem 0;
     padding: 1rem;
@@ -143,6 +343,7 @@ video {
     color: #fff;
 } */
 
+ /* Media Queries */
 /* @media (max-width: 700px) {
     .right {
       display: none;
@@ -159,5 +360,21 @@ video {
   
     #showChat {
       display: flex;
+    }
+
+    .share-btn-container {
+      transform: unset;
+      top: unset;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      flex-direction: row;
+      box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3);
+      padding: 16px 0;
+      justify-content: center;
+    }
+  
+    .share-btn-container a {
+      margin: 0 32px;
     }
   } */

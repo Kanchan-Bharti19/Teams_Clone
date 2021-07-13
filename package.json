@@ -1,5 +1,5 @@
 {
-  "name": "first_app",
+  "name": "teams_clone",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,5 @@
   "devDependencies": {
     "nodemon": "^2.0.7"
   },
-  "description": ""
+  "description": "This app will let you experience real time video calling experience."
 }
