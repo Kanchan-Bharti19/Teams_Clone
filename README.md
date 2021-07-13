@@ -30,4 +30,4 @@ Start the application and and Enjoy!
 ```sh
 node sever.js
 ```
-Visit http://localhost:3000/ and the enjoy the project.
+After the above setup visit http://localhost:3000/ and the enjoy the project.
