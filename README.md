@@ -1,5 +1,8 @@
 # Teams_Clone
 
+## Application link
+https://immense-sierra-97266.herokuapp.com/
+
 ## About the app
 This project was built under the guidance of mentors provised by Microsoft Engage 2021. It is video-chatting application built from scratch using **Node.js**. In this application we have used **Express.js** for server , **socket.io** to communicate back and forth to the server, **uuid** which allows us to generate dynamic URLs and **peerjs** which simplifies WebRTC peer-to-peer data, video, and audio calls.. We have used **ejs** as templeting engine.
 
@@ -14,3 +17,17 @@ git clone <repo-url>
 ```
 
 Install all the dependencies
+
+```sh
+npm install
+```
+
+```sh
+npm install express
+```
+Start the application and and Enjoy!
+
+```sh
+node sever.js
+```
+Visit http://localhost:3000/ and the enjoy the project.
