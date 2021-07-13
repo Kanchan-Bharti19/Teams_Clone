@@ -16,7 +16,7 @@ const myPeer = new Peer(undefined, {
 })
 
 // Whenever someone opens the link of webpage this will ask the name.
-const user = prompt('Enter your name:')
+const userName = prompt('Enter your name:')
 
 // Getting reference to our own video.
 const my_video = document.createElement('video')
