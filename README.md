@@ -1,10 +1,9 @@
 # Teams_Clone
 
-## What is this?
-This project was built under the guidance of mentors provised by Microsoft Engage 2021. It is video-chatting application built from scratch using **Node.js**, **Express.js**, **socket.io** and **peerjs**.
+## About the app
+This project was built under the guidance of mentors provised by Microsoft Engage 2021. It is video-chatting application built from scratch using **Node.js**. In this application we have used **Express.js** for server , **socket.io** to communicate back and forth to the server, **uuid** which allows us to generate dynamic URLs and **peerjs** which simplifies WebRTC peer-to-peer data, video, and audio calls.. We have used **ejs** as templeting engine.
 
-## Functioning 
-Torrent Client connects tracker of torrent file via UDP connection and download peers once the connection is established by TCP handshake.
+This application makes a peer to peer connection and transfers video and audio to the peers. The app contains other functionalities alse like mute button, video on/off button, invite button and end call button.
 
 ## Development setup
 
