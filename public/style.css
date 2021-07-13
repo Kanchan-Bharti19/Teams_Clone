@@ -300,7 +300,7 @@ video {
     color: #f5deb3;
     align-items: center;
     text-transform: capitalize;
-    font-size: large;
+    font-size: small;
 }
 
 .message > b > i {

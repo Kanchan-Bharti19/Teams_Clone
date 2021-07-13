@@ -53,7 +53,7 @@ navigator.mediaDevices.getUserMedia({
   })
   
   socket.on('createMessage', (message, userName) => {
-    $('ul').append(`<li class="message"><b>Participant</b><br/>${message}</li>`);
+    $('ul').append(`<li class="message"><b>${ moment().format( 'h:mm a Do MMMM, YYYY ' ) }</b><br/>${message}</li>`);
   })
 })
 
@@ -160,58 +160,3 @@ const scrollDown = () => {
   let c = $('chat_window')
   c.scrollTop(c.prop('scrollHeight'))
 }
-
-
-
-// const muteButton = () => {
-//   const html = ` <i class="fas fa-microphone"></i>
-//   <div class="text">Mute</div> `
-//   document.querySelector('.mic').innerHTML = html
-// }
-
-// const unmuteButton = () => {
-//   const html = ` <i class="unmute fas fa-microphone-slash"></i>
-//     <div class="text">Unmute</div> `
-//   document.querySelector('.mic').innerHTML = html
-// }
-
-// const stopVideo = () => {
-//   const html = ` <i class="fas fa-video"></i>
-//   <div class="text">Stop Video</div> `
-//   document.querySelector('.video_btn').innerHTML = html
-// }
-
-// const startVideo = () => {
-//   const html = ` <i class="stop fas fa-video-slash"></i>
-//   <div class="text">Start Video</div> `
-//   document.querySelector('.video_btn').innerHTML = html
-// }
-
-// const showChat = document.querySelector("#showChat");
-// let send = document.getElementById("send_msg")
-// let messages = document.querySelector(".messages")
-
-// send.addEventListener("click", (e) => {
-//   if (text.value.length !== 0) {
-//     socket.emit("message", text.value)
-//     text.value = ""
-//   }
-// })
-
-// text.addEventListener("keydown", (e) => {
-//   if (e.key === "Enter" && text.value.length !== 0) {
-//     socket.emit("message", text.value)
-//     text.value = ""
-//   }
-// })
-
-// socket.on("createMessage", (message, userName) => {
-//   messages.innerHTML =
-//     messages.innerHTML +
-//     `<div class="message">
-//         <b><i class="fas fa-user-circle"></i> <span> ${
-//           userName === user ? "me" : userName
-//         }</span> </b>
-//         <span>${message}</span>
-//     </div>`;
-// });
