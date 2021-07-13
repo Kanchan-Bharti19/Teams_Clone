@@ -47,7 +47,7 @@ body {
 
 /* Defining positioning for the left class which contains all aur content except the chat part. */
 .left {
-    flex: 0.75;
+    flex: 0.8;
     display: flex;
     flex-direction: column;
 }
@@ -236,7 +236,7 @@ video {
 
 /* Defining positioning for the right class which contains the chat part. */
 .right {
-    flex: 0.25;
+    flex: 0.2;
     display: flex;
     flex-direction: column;
     background-color: #243854;
