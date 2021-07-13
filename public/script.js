@@ -15,9 +15,6 @@ const myPeer = new Peer(undefined, {
   port: '443'
 })
 
-// Whenever someone opens the link of webpage this will ask the name.
-const userName = prompt('Enter your name:')
-
 // Getting reference to our own video.
 const my_video = document.createElement('video')
 // Muting own video as we don't want own microphone to playback for us 
@@ -56,7 +53,7 @@ navigator.mediaDevices.getUserMedia({
   })
   
   socket.on('createMessage', (message, userName) => {
-    $('ul').append(`<li class="message"><b><i class="far fa-user-circle"></i><span> ${userName === user ? "me" : userName}</span></b><br/>${message}</li>`);
+    $('ul').append(`<li class="message"><b>Participant</b><br/>${message}</li>`);
   })
 })
 
