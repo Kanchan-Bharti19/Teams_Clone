@@ -20,17 +20,20 @@ const my_video = document.createElement('video')
 // Muting own video as we don't want own microphone to playback for us 
 my_video.muted = true
 
+// This will store the user ids of peers.
 const peers = {}
 
 let my_video_stream
-
 navigator.mediaDevices.getUserMedia({
-    video: true,
-    audio: true
+  // Setting audio and video permissions.
+  video: true,
+  audio: true
 }).then(stream => {
-    my_video_stream=stream
-    addVideoStream(my_video, stream)
+  my_video_stream=stream
+  // Add video to the stream.
+  addVideoStream(my_video, stream)
 
+  // This function will be used to answer the call.
   myPeer.on('call', call => {
     call.answer(stream)
     const video = document.createElement('video')
@@ -39,40 +42,43 @@ navigator.mediaDevices.getUserMedia({
     })
   })
 
+  // Connect to new user once userId is passed by callback function
   socket.on('user-connected', (userId) => {
     connectToNewUser(userId, stream)
   })
 
   let text = $('input')
-
+  // when enter is pressed this will send the message to all user including the sender
   $('html').keydown((e) => {
     if(e.which == 13 && text.val().length !== 0) {
       socket.emit('message', text.val())
       text.val('')
     }
   })
-  
-  socket.on('createMessage', (message, userName) => {
+  // This will append our message to the chat window
+  socket.on('createMessage', (message) => {
     $('ul').append(`<li class="message"><b>Participant</b><br/>${message}</li>`);
   })
 })
 
+// This will remove our user id from the peers when we disconnect.
 socket.on('user-disconnected', userId => {
   if (peers[userId]) peers[userId].close()
 })
 
-// As we connect with peer server and get id this 
+// As we connect with peer server and get id we wiil broadcast to room.
 myPeer.on('open', id => {
   socket.emit('join-room', Room_ID, id)
 })
 
-
+// This function will be used to call user and send and recieve video and audio.
 function connectToNewUser(userId, stream) {
   const call = myPeer.call(userId, stream)
   const video = document.createElement('video')
   call.on('stream', userVideoStream => {
     addVideoStream(video, userVideoStream)
   })
+  // When someone closes the call this will remove it from our video grid.
   call.on('close', () => {
     video.remove()
   })

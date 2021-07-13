@@ -14,12 +14,14 @@ const peerServer = ExpressPeerServer(server,{
   debug: true
 })
 
-
+// Use peerServer as middleware.
 app.use('/peerjs',peerServer)
+
 //Setting our views.
 // ejs is a templeting engine.
 app.set('view engine', 'ejs')
-// Setting up our static folder where will put all our frontend javascript and CSS code here.
+
+// This will allow us to access all of the static files within the public folder.
 app.use(express.static('public'))
 
 // Creating default route of our server.
@@ -38,16 +40,14 @@ io.on('connection', socket => {
   //Server is going to listen when someone connects to the room.
   socket.on('join-room', (roomId, userId) => {
     socket.join(roomId)
-    // Broadcast everyone else in the room when someone connects .
+    // Broadcast everyone else in the room when someone connects.
     socket.to(roomId).broadcast.emit('user-connected', userId)
-
+    // Broadcast everyone else in the room when someone send a message.
     socket.on('message', (message, userName) => {
-      // io.to(roomId).emit('createMessage', message)
       io.to(roomId).emit('createMessage', message, userName);
     });
-
+    // Broadcast everyone else in the room when someone disconnects.
     socket.on('disconnect', () => {
-      //socket.to(roomId).emit('user-disconnected', userId)
       socket.to(roomId).broadcast.emit('user-disconnected', userId)
     })
   })

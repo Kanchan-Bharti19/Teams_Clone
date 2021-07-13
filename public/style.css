@@ -295,17 +295,11 @@ video {
     margin: 1.5rem;
     color: var(--white);
 }
-
 .message > b {
     color: #f5deb3;
     align-items: center;
     text-transform: capitalize;
     font-size: small;
-}
-
-.message > b > i {
-    margin-right: 0.7rem;
-    font-size: 1rem;
 }
 .message > span {
     background-color: oldlace;
@@ -313,15 +307,3 @@ video {
     padding: 1rem;
     border-radius: 5px;
 }
-
-/* #showChat {
-    display: none;
-} */
-/* .header_back {
-    display: none;
-    position: absolute;
-    font-size: 1.3rem;
-    top: 17px;
-    left: 28px;
-    color: #fff;
-} */
