@@ -53,7 +53,7 @@ navigator.mediaDevices.getUserMedia({
   })
   
   socket.on('createMessage', (message, userName) => {
-    $('ul').append(`<li class="message"><b>${ moment().format( 'h:mm a Do MMMM, YYYY ' ) }</b><br/>${message}</li>`);
+    $('ul').append(`<li class="message"><b>Participant</b><br/>${message}</li>`);
   })
 })
 
